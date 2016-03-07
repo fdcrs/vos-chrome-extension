@@ -1,0 +1,172 @@
+@import "~react-toolbox/lib/commons";
+@import "./toolbox-theme";
+
+$i: !important;
+
+body {
+  position: initial $i;
+  min-width: 220px;
+}
+
+.header {
+  justify-content: center;
+  padding: 0;
+  font-size: 2.7rem;
+  font-family: 'Open Sans', 'Roboto', sans-serif;
+}
+
+nav {
+  label {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.app, main {
+  text-align: center;
+}
+
+.loading {
+  margin: 32px auto 20px;
+}
+
+.history {
+  h2 {
+    text-align: left;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px 10px 0;
+  }
+}
+
+.activeList, .clanList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.clanIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+
+  &.selected {
+    img {
+      background-color: $color-primary;
+      border-radius: 2px;
+    }
+  }
+
+  img {
+    -webkit-user-select: none;
+    cursor: pointer;
+    width: 81px;
+    height: 81px;
+  }
+
+  h1 {
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    color: $color-primary-dark;
+    font-size: 8rem;
+    display: block;
+    width: 81px;
+    height: 81px;
+    line-height: 81px;
+  }
+}
+
+.clanIconRipple {
+  cursor: pointer;
+  position: absolute;
+  width: 81px;
+  height: 81px;
+  overflow: hidden;
+  margin-top: 10px;
+
+  span[role="ripple"] {
+    color: whitesmoke;
+  }
+}
+
+.hourBarContainer {
+  max-width: 85%;
+  margin: 12px auto;
+
+  a {
+    [data-react-toolbox="tooltip"] {
+      font-size: 1.2rem;
+      font-weight: initial;
+    }
+
+    &:hover, &:active, &:focus {
+      [data-react-toolbox="tooltip"] {
+        transform: scale(1) translateX(-50%) translateY(-150%) $i;
+      }
+    }
+  }
+}
+
+.info {
+  margin-top: 1.7rem;
+
+  ul {
+    padding: 1rem;
+    text-align: left;
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.87);
+    list-style-position: inside;
+
+    li:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.optionsContainer {
+  padding: 0 3rem 4rem;
+  width: 460px;
+  margin: 0 auto;
+  text-align: left;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .clanList {
+    justify-content: flex-start;
+  }
+}
+
+.optionsButton {
+  width: 85%;
+  margin: 12px auto;
+}
+
+span[data-role="label"] {
+  cursor: pointer;
+  -webkit-user-select: none;
+}
+
+.scrollArea {
+  height: 300px $i;
+
+  & > div:last-child {
+    width: 5px $i;
+    //opacity: .3 $i;
+    &:hover {
+      background: transparent $i;
+    }
+
+    div {
+      width: 0.2rem $i;
+      background: $color-primary $i;
+    }
+  }
+
+}
